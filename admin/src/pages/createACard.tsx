@@ -73,9 +73,11 @@ export default function CreateACard({ post }: { post: Post }) {
             />
             {published ? "Published" : "Draft"}
           </span>
-          <time dateTime={post.createdAt}>
-            {dateFormat.format(new Date(post.createdAt))}
-          </time>
+          {post.createdAt && (
+            <time dateTime={post.createdAt}>
+              {dateFormat.format(new Date(post.createdAt))}
+            </time>
+          )}
         </div>
       </div>
     </article>
