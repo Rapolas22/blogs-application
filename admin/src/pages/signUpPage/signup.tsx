@@ -106,7 +106,7 @@ export default function SignUp() {
               <div className="text-slate-900 text-sm text-center dark:text-slate-50">
                 Already have an account?
                 <Link
-                  to="/signin"
+                  to="/login"
                   className="text-blue-700 hover:underline ml-1 font-medium dark:text-blue-500"
                 >
                   Sign in
