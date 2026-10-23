@@ -6,10 +6,10 @@ import { prisma } from "../../lib/prisma";
 
 const maxAge = 3 * 24 * 60 * 60; // 3 dienos sekundėmis
 
-const createToken = (id: number) => {
+const createToken = (id: number, role: string) => {
   const secret = process.env.JWT_SIGN;
 
-  return jwt.sign({ id }, secret, { expiresIn: maxAge });
+  return jwt.sign({ id, role }, secret, { expiresIn: maxAge });
 };
 
 export const signup_post = async (req: Request, res: Response) => {
@@ -20,13 +20,6 @@ export const signup_post = async (req: Request, res: Response) => {
 
     const user = await prisma.user.create({
       data: { email, password: hashedPassword },
-    });
-
-    const token = createToken(user.id);
-    res.cookie("jwt", token, {
-      httpOnly: true,
-      sameSite: "lax",
-      maxAge: maxAge * 1000,
     });
 
     res.status(201).json({ user: user.id });
@@ -52,7 +45,8 @@ export const login_post = async (req: Request, res: Response) => {
       return res.status(401).json({ message: "Wrong password or email" });
     }
 
-    const token = createToken(user.id);
+    const token = createToken(user.id, user.role);
+
     res.cookie("jwt", token, {
       httpOnly: true,
       sameSite: "lax",
@@ -64,4 +58,8 @@ export const login_post = async (req: Request, res: Response) => {
     console.log(err);
     res.status(500).json({ message: "Server error" });
   }
+};
+
+export const protectRoutesHandler_get = (req: Request, res: Response) => {
+  return res.status(200).json(res.locals.userId);
 };

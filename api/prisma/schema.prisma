@@ -17,6 +17,7 @@ model User {
   email    String @unique
   password String
   posts    Post[]
+  role     Role     @default(USER)
 }
 
 model Post {
@@ -30,4 +31,9 @@ model Post {
   description String?
   seoName String?
   thumbnailUrl String?
+}
+
+enum Role {
+  ADMIN
+  USER
 }
