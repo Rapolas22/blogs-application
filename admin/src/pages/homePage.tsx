@@ -16,6 +16,13 @@ function checkLocalStorage(): Post[] {
 export default function HomePage() {
   const [posts, setPosts] = useState<Post[]>(() => checkLocalStorage());
 
+  // Called by a card after the server confirmed the delete
+  const removePost = (id: number) => {
+    const remaining = posts.filter((post) => post.id !== id);
+    setPosts(remaining);
+    localStorage.setItem("posts", JSON.stringify(remaining));
+  };
+
   useEffect(() => {
     fetch("/api/getPosts")
       .then((response) => response.json())
@@ -31,7 +38,11 @@ export default function HomePage() {
       <Header />
       <div className="flex flex-col items-center gap-4 p-6">
         {posts.map((post) => (
-          <CreateACard key={post.id} post={post} />
+          <CreateACard
+            key={post.id}
+            post={post}
+            onDelete={() => removePost(post.id)}
+          />
         ))}
       </div>
     </main>

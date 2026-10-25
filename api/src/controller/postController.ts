@@ -26,7 +26,7 @@ export const postCreation_post = async (req: Request, res: Response) => {
     const post = await prisma.post.create({
       data: {
         author: {
-          connect: { id: res.locals.id },
+          connect: { id: res.locals.userId },
         },
         title: title,
         content: content,
@@ -36,8 +36,29 @@ export const postCreation_post = async (req: Request, res: Response) => {
       },
     });
 
-    return res.status(200).json();
+    return res.status(201).json(post);
   } catch (err) {
     console.log(err);
+    res.status(500).json({ message: "Server error" });
+  }
+};
+
+export const postRemove_delete = async (req: Request, res: Response) => {
+  try {
+    const post = await prisma.post.delete({
+      where: {
+        id: Number(req.params.id),
+      },
+    });
+
+    res.status(200).json(post);
+  } catch (error: any) {
+    // P2025 = Prisma couldn't find a post with that id
+    if (error.code === "P2025") {
+      return res.status(404).json({ message: "Post not found" });
+    }
+
+    console.log(error);
+    res.status(500).json({ message: "Server error" });
   }
 };

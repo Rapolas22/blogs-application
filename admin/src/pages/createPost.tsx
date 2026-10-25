@@ -1,6 +1,5 @@
 import { Controller, useForm, type SubmitHandler } from "react-hook-form";
 import { Editor } from "@tinymce/tinymce-react";
-import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 type FormFields = {
