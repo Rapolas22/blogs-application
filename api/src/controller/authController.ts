@@ -2,7 +2,7 @@ import express, { Router, Request, Response } from "express";
 import jwt from "jsonwebtoken";
 import "dotenv/config";
 import bcrypt from "bcrypt";
-import { prisma } from "../../lib/prisma";
+import prisma from "../../lib/prisma";
 
 const maxAge = 3 * 24 * 60 * 60; // 3 dienos sekundėmis
 
