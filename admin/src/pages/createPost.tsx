@@ -2,7 +2,7 @@ import { Controller, useForm, type SubmitHandler } from "react-hook-form";
 import { Editor } from "@tinymce/tinymce-react";
 import { useNavigate } from "react-router-dom";
 
-type FormFields = {
+export type FormFields = {
   title: string;
   content: string;
   thumbnailUrl: string;
@@ -81,7 +81,7 @@ export default function CreatePost() {
           rules={{ required: true }}
           render={({ field }) => (
             <Editor
-              apiKey={import.meta.env.VITE_TINYMCE_API_KEY}
+              apiKey={import.meta.env.VITE_TINY_MCE_KEY}
               value={field.value}
               onEditorChange={(html) => field.onChange(html)}
               init={{

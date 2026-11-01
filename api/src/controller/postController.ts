@@ -6,11 +6,11 @@ export const homePagePosts_get = async (req: Request, res: Response) => {
     const posts = await prisma.post.findMany({
       select: {
         title: true,
-        thumbnailUrl: true,
-        description: true,
-        id: true,
         published: true,
+        description: true,
         createdAt: true,
+        thumbnailUrl: true,
+        id: true,
       },
     });
     res.send(posts);
@@ -82,6 +82,7 @@ export const updateProduct_patch = async (req: Request, res: Response) => {
     const product = await prisma.post.update({
       where: {
         id: Number(req.params.id),
+        authorId: Number(req.params.id),
       },
       data: {
         title: title,

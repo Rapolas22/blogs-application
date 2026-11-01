@@ -86,7 +86,7 @@ export default function CreateACard({ post, onDelete }: CardProps) {
       </div>
 
       <div className="flex shrink-0 flex-col items-center gap-1">
-        <ToggleDialog />
+        <ToggleDialog props={post} />
 
         <button
           onClick={() => deletePost(post.id)}

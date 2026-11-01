@@ -4,7 +4,6 @@ import {
   signup_post,
   protectRoutesHandler_get,
 } from "../controller/authController";
-import { homePagePosts_get } from "../controller/postController";
 import { requireAuth } from "../middleware/authMiddleware";
 
 const authRouter: Router = express.Router();
