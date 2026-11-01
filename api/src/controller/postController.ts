@@ -97,3 +97,24 @@ export const updateProduct_patch = async (req: Request, res: Response) => {
     res.status(500).json({ message: "post not found" });
   }
 };
+
+export const userPagePostsFetch_get = async (req: Request, res: Response) => {
+  try {
+    const posts = await prisma.post.findMany({
+      where: {
+        published: true,
+      },
+      select: {
+        id: true,
+        title: true,
+        description: true,
+        thumbnailUrl: true,
+        createdAt: true,
+      },
+    });
+
+    return res.status(200).json(posts);
+  } catch (err) {
+    res.status(500).json({ message: "Failed to get posts" });
+  }
+};

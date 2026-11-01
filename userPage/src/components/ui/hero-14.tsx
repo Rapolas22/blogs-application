@@ -1,37 +1,42 @@
-"use client";
+"use client"
 
-import LogoIcon from "@/assets/logo-icon";
-import { ArrowRight, ChevronDown } from "lucide-react";
-import { FaGithub as Github, FaFigma as Figma, FaSlack as Slack, FaTwitch as Twitch } from "react-icons/fa6";
-import { SiFramer as Framer } from "react-icons/si";
-import { motion, type Variants } from "motion/react";
+import LogoIcon from "@/assets/logo-icon"
+import { ArrowRight, ChevronDown } from "lucide-react"
+import {
+  FaGithub as Github,
+  FaFigma as Figma,
+  FaSlack as Slack,
+  FaTwitch as Twitch,
+} from "react-icons/fa6"
+import { SiFramer as Framer } from "react-icons/si"
+import { motion, type Variants } from "motion/react"
 
 interface NavLink {
-  label: string;
-  href: string;
-  hasDropdown?: boolean;
+  label: string
+  href: string
+  hasDropdown?: boolean
 }
 
 interface PartnerLogo {
-  name: string;
-  mark: "github" | "figma" | "framer" | "slack" | "twitch";
+  name: string
+  mark: "github" | "figma" | "framer" | "slack" | "twitch"
 }
 
 interface Hero14Props {
-  brandName?: string;
-  navLinks?: NavLink[];
-  badgeText?: string;
-  headingLine1?: string;
-  headingLine2?: string;
-  description?: string;
-  primaryCtaLabel?: string;
-  primaryCtaHref?: string;
-  demoLabel?: string;
-  demoHref?: string;
-  partnerEyebrow?: string;
-  partners?: PartnerLogo[];
-  backgroundImage?: string;
-  ref?: { current: HTMLElement | null };
+  brandName?: string
+  navLinks?: NavLink[]
+  badgeText?: string
+  headingLine1?: string
+  headingLine2?: string
+  description?: string
+  primaryCtaLabel?: string
+  primaryCtaHref?: string
+  demoLabel?: string
+  demoHref?: string
+  partnerEyebrow?: string
+  partners?: PartnerLogo[]
+  backgroundImage?: string
+  onCtaClick?: () => void
 }
 
 const navLinksDefault: NavLink[] = [
@@ -40,7 +45,7 @@ const navLinksDefault: NavLink[] = [
   { label: "About", href: "#" },
   { label: "Resources", href: "#" },
   { label: "FAQs", href: "#" },
-];
+]
 
 const partnerLogosDefault: PartnerLogo[] = [
   { name: "GitHub", mark: "github" },
@@ -48,7 +53,7 @@ const partnerLogosDefault: PartnerLogo[] = [
   { name: "Framer", mark: "framer" },
   { name: "Slack", mark: "slack" },
   { name: "Twitch", mark: "twitch" },
-];
+]
 
 const containerVariants: Variants = {
   hidden: {},
@@ -58,7 +63,7 @@ const containerVariants: Variants = {
       delayChildren: 0.14,
     },
   },
-};
+}
 
 const riseVariants: Variants = {
   hidden: { opacity: 0, y: 24, filter: "blur(10px)" },
@@ -68,7 +73,7 @@ const riseVariants: Variants = {
     filter: "blur(0px)",
     transition: { type: "spring", bounce: 0.25, duration: 1.2 },
   },
-};
+}
 
 const logoVariants: Variants = {
   hidden: { opacity: 0, y: 14, scale: 0.96, filter: "blur(8px)" },
@@ -79,7 +84,7 @@ const logoVariants: Variants = {
     filter: "blur(0px)",
     transition: { type: "spring", bounce: 0.25, duration: 1.2 },
   },
-};
+}
 
 const imageVariants: Variants = {
   hidden: { opacity: 0, scale: 1.1, filter: "blur(10px)" },
@@ -89,29 +94,28 @@ const imageVariants: Variants = {
     filter: "blur(0px)",
     transition: { type: "spring", bounce: 0.1, duration: 1.6 },
   },
-};
+}
 
 function PartnerMark({ mark }: { mark: PartnerLogo["mark"] }) {
-  if (mark === "github") return <Github className="size-5" />;
-  if (mark === "figma") return <Figma className="size-5" />;
-  if (mark === "framer") return <Framer className="size-5" />;
-  if (mark === "slack") return <Slack className="size-5" />;
-  if (mark === "twitch") return <Twitch className="size-5" />;
+  if (mark === "github") return <Github className="size-5" />
+  if (mark === "figma") return <Figma className="size-5" />
+  if (mark === "framer") return <Framer className="size-5" />
+  if (mark === "slack") return <Slack className="size-5" />
+  if (mark === "twitch") return <Twitch className="size-5" />
 
-  return null;
+  return null
 }
 
 export default function Hero14({
+  onCtaClick,
   headingLine1 = "Unleash Your Imagination",
   headingLine2 = "Beyond the Horizon",
   description = "Modern blog page where you can showcase your content with style and elegance. Engage your audience with a seamless reading experience.",
   primaryCtaLabel = "Get Started",
-  primaryCtaHref = "#",
   backgroundImage = "https://images.unsplash.com/photo-1603366615917-1fa6dad5c4fa?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D",
-  ref,
 }: Hero14Props) {
   return (
-    <section className="relative max-w-screen min-h-screen overflow-hidden  text-white antialiased">
+    <section className="relative min-h-screen max-w-screen overflow-hidden text-white antialiased">
       <motion.div
         className="relative flex min-h-screen max-w-full items-center justify-center"
         initial="hidden"
@@ -146,18 +150,17 @@ export default function Hero14({
             {description}
           </motion.p>
 
-          <motion.a
+          <motion.button
+            type="button"
             variants={riseVariants}
-            href={primaryCtaHref}
-            onClick={() => ref?.current?.scrollIntoView({ behavior: "smooth" })}
+            onClick={() => onCtaClick?.()}
             className="group/cta mt-6 inline-flex min-h-10 items-center justify-center gap-1 rounded-md bg-zinc-100 px-6 text-sm font-normal text-slate-800 shadow-[inset_0_2px_0_0_rgba(255,255,255,1),inset_0_-1px_0_0_rgba(0,0,0,0.2)] transition-[background-color,color,transform] duration-200 ease-out text-shadow-2xs hover:bg-zinc-200 hover:text-slate-950 active:scale-[0.96]"
           >
             {primaryCtaLabel}
             <ArrowRight className="size-3.5 transition-transform duration-200 ease-out group-hover/cta:translate-x-1" />
-          </motion.a>
-          
+          </motion.button>
         </div>
       </motion.div>
     </section>
-  );
+  )
 }

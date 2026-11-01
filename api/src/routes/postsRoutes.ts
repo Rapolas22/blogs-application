@@ -5,6 +5,7 @@ import {
   postRemove_delete,
   getPostById_get,
   updateProduct_patch,
+  userPagePostsFetch_get,
 } from "../controller/postController";
 import { requireAuth } from "../middleware/authMiddleware";
 
@@ -15,5 +16,7 @@ postsRouter.post("/postCreation", requireAuth, postCreation_post);
 postsRouter.delete("/post/remove/:id", requireAuth, postRemove_delete);
 postsRouter.get("/getPosts/:id", requireAuth, getPostById_get);
 postsRouter.patch("/patchPosts/:id", requireAuth, updateProduct_patch);
+
+postsRouter.get("/user/posts", userPagePostsFetch_get);
 
 export default postsRouter;

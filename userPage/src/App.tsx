@@ -3,10 +3,10 @@ import SecondPage from "./pages/secondPage"
 import { useRef } from "react"
 
 export function App() {
-     const scrollToSecondPage = () => {
-     secondPageRef.current?.scrollIntoView({ behavior: "smooth" });
-   };
-   const secondPageRef = useRef<HTMLElement | null>(null);
+  const scrollToSecondPage = () => {
+    secondPageRef.current?.scrollIntoView({ behavior: "smooth" })
+  }
+  const secondPageRef = useRef<HTMLDivElement>(null)
 
   return (
     <main>
