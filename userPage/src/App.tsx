@@ -1,16 +1,17 @@
-import { Particles } from "@/components/ui/particles"
+import Hero14 from "./components/ui/hero-14"
+import SecondPage from "./pages/secondPage"
+import { useRef } from "react"
 
 export function App() {
+     const scrollToSecondPage = () => {
+     secondPageRef.current?.scrollIntoView({ behavior: "smooth" });
+   };
+   const secondPageRef = useRef<HTMLElement | null>(null);
+
   return (
-    <main className="flex min-h-screen max-w-screen flex-col p-5">
-      <Particles intensity="subtle" className="min-h-screen">
-        <div className="flex h-20 justify-center">
-          <p>header</p>
-        </div>
-        <div className="flex flex-1 items-center justify-center">
-          <p>Content</p>
-        </div>
-      </Particles>
+    <main>
+      <Hero14 onCtaClick={scrollToSecondPage} />
+      <SecondPage ref={secondPageRef} />
     </main>
   )
 }
