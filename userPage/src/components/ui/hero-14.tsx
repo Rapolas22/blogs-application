@@ -131,6 +131,7 @@ export default function Hero14({
         />
 
         <div className="absolute inset-0 bg-slate-950/40" />
+        <div className="pointer-events-none absolute inset-x-0 bottom-0 h-40 bg-linear-to-b from-transparent to-stone-200 dark:to-stone-950" />
 
         <div className="relative z-10 flex w-full max-w-[76rem] flex-col items-center px-5 text-center sm:px-8 lg:px-12 2xl:max-w-7xl">
           <motion.h1

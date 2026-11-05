@@ -21,7 +21,7 @@ type EditPostFormProps = {
   postId: number;
 };
 
-async function fetchPostById(postId: number): Promise<Post> {
+export async function fetchPostById(postId: number): Promise<Post> {
   try {
     const response = await fetch(`/api/getPosts/${postId}`);
 

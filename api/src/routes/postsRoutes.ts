@@ -6,6 +6,7 @@ import {
   getPostById_get,
   updateProduct_patch,
   userPagePostsFetch_get,
+  userPageGetSinglePost_get,
 } from "../controller/postController";
 import { requireAuth } from "../middleware/authMiddleware";
 
@@ -18,5 +19,6 @@ postsRouter.get("/getPosts/:id", requireAuth, getPostById_get);
 postsRouter.patch("/patchPosts/:id", requireAuth, updateProduct_patch);
 
 postsRouter.get("/user/posts", userPagePostsFetch_get);
+postsRouter.get("/user/posts/:id", userPageGetSinglePost_get);
 
 export default postsRouter;

@@ -1,7 +1,6 @@
-import { Button } from "@/components/ui/button"
+import { buttonVariants } from "@/components/ui/button"
 import {
   Card,
-  CardAction,
   CardDescription,
   CardFooter,
   CardHeader,
@@ -16,19 +15,27 @@ type cardProps = {
 
 export default function CreatePostCard({ post }: cardProps) {
   return (
-    <Card className="relative mx-auto w-full max-w-sm pt-0">
-      <div className="absolute inset-0 z-30 aspect-video bg-black/35" />
+    <Card>
       <img
         src={post.thumbnailUrl ?? ""}
         alt="Event cover"
-        className="relative z-20 aspect-video w-full object-cover brightness-60 dark:brightness-40"
+        className="aspect-video w-full bg-muted object-cover"
       />
       <CardHeader>
-        <CardTitle>{post.title}</CardTitle>
-        <CardDescription>{post.description}</CardDescription>
+        <CardTitle className="line-clamp-2 text-lg text-balance">
+          {post.title}
+        </CardTitle>
+        <CardDescription className="line-clamp-2">
+          {post.description}
+        </CardDescription>
       </CardHeader>
-      <CardFooter>
-        <Button className="w-full">View post</Button>
+      <CardFooter className="mt-auto">
+        <a
+          href={`user/posts/${post.id}`}
+          className={buttonVariants({ variant: "default", size: "lg" })}
+        >
+          View post
+        </a>
       </CardFooter>
     </Card>
   )

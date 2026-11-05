@@ -34,10 +34,12 @@ export default function SecondPage({ ref }: appRefs) {
   return (
     <div
       ref={ref}
-      className="flex min-h-screen flex-col items-start bg-stone-200 p-20 dark:bg-stone-950"
+      className="flex min-h-screen flex-col items-center bg-stone-200 px-5 py-24 sm:px-8 sm:py-32 lg:px-12 dark:bg-stone-950"
     >
-      <h1 className="mb-3">Posts:</h1>
-      <div className="grid auto-rows-auto grid-cols-4 gap-10 p-0">
+      <h1 className="mb-10 w-full max-w-304 font-serif text-3xl tracking-tight text-balance sm:text-4xl">
+        Posts:
+      </h1>
+      <div className="grid w-full max-w-304 grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-3">
         {traversePosts(posts)}
       </div>
     </div>
