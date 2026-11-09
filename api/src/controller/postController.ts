@@ -1,5 +1,6 @@
 import { Request, Response } from "express";
-import prisma from "../../lib/prisma";
+import prisma from "../lib/prisma";
+import { HttpError } from "../lib/HttpError";
 
 export const homePagePosts_get = async (req: Request, res: Response) => {
   try {
@@ -13,9 +14,16 @@ export const homePagePosts_get = async (req: Request, res: Response) => {
         id: true,
       },
     });
-    res.send(posts);
+
+    if (!posts || posts.length === 0)
+      throw new HttpError(404, "No posts found");
+
+    res.status(200).json(posts);
   } catch (err) {
-    console.log(err);
+    if (err instanceof HttpError) {
+      return res.status(err.status).json({ message: err.message });
+    }
+
     res.status(500).json({ message: "Server error" });
   }
 };
@@ -36,9 +44,14 @@ export const postCreation_post = async (req: Request, res: Response) => {
       },
     });
 
+    if (!post) throw new HttpError(500, "Failed to create the post");
+
     return res.status(201).json(post);
   } catch (err) {
-    console.log(err);
+    if (err instanceof HttpError) {
+      return res.status(err.status).json({ message: err.message });
+    }
+
     res.status(500).json({ message: "Server error" });
   }
 };
@@ -51,14 +64,19 @@ export const postRemove_delete = async (req: Request, res: Response) => {
       },
     });
 
+    if (!post) throw new HttpError(404, "Post not found");
+
     res.status(200).json(post);
   } catch (error: any) {
-    // P2025 = Prisma couldn't find a post with that id
     if (error.code === "P2025") {
-      return res.status(404).json({ message: "Post not found" });
+      return res
+        .status(404)
+        .json({ message: "Record to delete does not exist." });
     }
 
-    console.log(error);
+    if (error instanceof HttpError)
+      throw new HttpError(error.status, error.message);
+
     res.status(500).json({ message: "Server error" });
   }
 };
@@ -70,9 +88,16 @@ export const getPostById_get = async (req: Request, res: Response) => {
         id: Number(req.params.id),
       },
     });
+
+    if (!response) throw new HttpError(404, "Post not found");
+
     res.status(200).json(response);
   } catch (error) {
-    res.status(500).json({ message: "Post not found" });
+    if (error instanceof HttpError) {
+      return res.status(error.status).json({ message: error.message });
+    }
+
+    res.status(500).json({ message: "Server error" });
   }
 };
 
@@ -92,9 +117,16 @@ export const updateProduct_patch = async (req: Request, res: Response) => {
         seoName: seoName,
       },
     });
+
+    if (!product)
+      throw new HttpError(404, "Post not found or you are not the author");
+
     res.status(200).json(product);
   } catch (error) {
-    res.status(500).json({ message: "post not found" });
+    if (error instanceof HttpError) {
+      return res.status(error.status).json({ message: error.message });
+    }
+    res.status(500).json({ message: "Server error" });
   }
 };
 
@@ -113,9 +145,16 @@ export const userPagePostsFetch_get = async (req: Request, res: Response) => {
       },
     });
 
+    if (!posts || posts.length === 0)
+      throw new HttpError(404, "No posts found");
+
     return res.status(200).json(posts);
   } catch (err) {
-    res.status(500).json({ message: "Failed to get posts" });
+    if (err instanceof HttpError) {
+      return res.status(err.status).json({ message: err.message });
+    }
+
+    res.status(500).json({ message: "Server error" });
   }
 };
 
@@ -131,8 +170,14 @@ export const userPageGetSinglePost_get = async (
       },
     });
 
+    if (!post) throw new HttpError(404, "Post not found");
+
     res.status(200).json(post);
   } catch (err) {
-    res.status(500).json({ message: "Failed to fetch post by id" });
+    if (err instanceof HttpError) {
+      return res.status(err.status).json({ message: err.message });
+    }
+
+    res.status(500).json({ message: "Server error" });
   }
 };

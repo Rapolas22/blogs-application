@@ -1,25 +1,28 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import CreatePost from "./pages/createPost";
-import HomePage from "./pages/homePage";
-import SignIn from "./pages/signInPage/signin";
-import SignUp from "./pages/signUpPage/signup";
+import HomePage from "./features/post/pages/HomePage";
+import Login from "./features/auth/pages/signin";
+import SignUp from "./features/auth/pages/signup";
 import ProtectedRoutes from "./protectedRoutes";
 
 import "./App.css";
+import { ThemeProvider } from "./components/ui/theme-provider";
 
 function App() {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route element={<ProtectedRoutes />}>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/create" element={<CreatePost />} />
-        </Route>
+    <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
+      <BrowserRouter>
+        <Routes>
+          <Route element={<ProtectedRoutes />}>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/create" element={<CreatePost />} />
+          </Route>
 
-        <Route path="/signin" element={<SignIn />} />
-        <Route path="/signup" element={<SignUp />} />
-      </Routes>
-    </BrowserRouter>
+          <Route path="/signin" element={<Login />} />
+          <Route path="/signup" element={<SignUp />} />
+        </Routes>
+      </BrowserRouter>
+    </ThemeProvider>
   );
 }
 

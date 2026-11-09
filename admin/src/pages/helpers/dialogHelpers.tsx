@@ -98,7 +98,7 @@ export default function EditPostForm({ postId }: EditPostFormProps) {
               rules={{ required: true }}
               render={({ field }) => (
                 <Editor
-                  apiKey={import.meta.env.VITE_TINY_MCE_KEY}
+                  apiKey={import.meta.env.VITE_TINYMCE_API_KEY}
                   value={field.value ?? ""}
                   onEditorChange={(html) => field.onChange(html)}
                   init={{
