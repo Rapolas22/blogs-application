@@ -1,8 +1,11 @@
 import Hero14 from "./components/ui/hero-14"
-import SecondPage from "./pages/secondPage"
+import SecondPage from "./features/secondPage/pages/secondPage"
 import { useRef } from "react"
-import { BrowserRouter, Route, Routes, useParams } from "react-router-dom"
-import ViewBlog from "./pages/viewBlog"
+import { BrowserRouter, Route, Routes } from "react-router-dom"
+import ViewBlog from "./features/viewABlog/pages/viewBlog"
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query"
+
+const queryClient = new QueryClient()
 
 export function App() {
   const scrollToSecondPage = () => {
@@ -10,7 +13,7 @@ export function App() {
   }
   const secondPageRef = useRef<HTMLDivElement>(null)
   return (
-    <main>
+    <QueryClientProvider client={queryClient}>
       <BrowserRouter>
         <Routes>
           <Route
@@ -25,7 +28,7 @@ export function App() {
           <Route path="user/posts/:id" element={<ViewBlog />} />
         </Routes>
       </BrowserRouter>
-    </main>
+    </QueryClientProvider>
   )
 }
 

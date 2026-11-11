@@ -2,26 +2,18 @@ import { useState } from "react";
 import type { Post } from "../../../../types.ts";
 import ToggleDialog from "../../../pages/toggleTheDialog.tsx";
 import { formatPostDate } from "../../post/constants/constants.ts";
-import { useDeletePost } from "../../post/hooks/useDeletePost.ts";
 import AltImage from "../components/altImage.tsx";
 import { ConfirmationDialog } from "../components/confirmationDialog.tsx";
 
 type CardProps = {
   post: Post;
+  onDelete: () => void;
 };
 
-export default function CreateACard({ post }: CardProps) {
+export default function CreateACard({ post, onDelete }: CardProps) {
   const published = post.published;
   const [imageFailed, setImageFailed] = useState(false);
   const showImage = post.thumbnailUrl && !imageFailed;
-
-  const deletePost = useDeletePost();
-
-  const handleDelete = () => {
-    deletePost.mutate(post.id, {
-      onError: () => alert("Couldn't delete the post. Try again."),
-    });
-  };
 
   return (
     <article
@@ -80,10 +72,7 @@ export default function CreateACard({ post }: CardProps) {
       <div className="flex shrink-0 flex-col gap-1">
         <ToggleDialog props={post} />
 
-        <ConfirmationDialog
-          onConfirm={handleDelete}
-          disabled={deletePost.isPending}
-        />
+        <ConfirmationDialog onConfirm={onDelete} />
       </div>
     </article>
   );

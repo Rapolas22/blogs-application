@@ -1,4 +1,4 @@
-import express, { Router, Request, Response } from "express";
+import express, { Router } from "express";
 import {
   login_post,
   signup_post,
@@ -10,6 +10,6 @@ const authRouter: Router = express.Router();
 
 authRouter.post("/login", login_post);
 authRouter.post("/signup", signup_post);
-authRouter.get("/me", requireAuth, protectRoutesHandler_get);
+authRouter.get("/me", requireAuth(["ADMIN"]), protectRoutesHandler_get);
 
 export default authRouter;

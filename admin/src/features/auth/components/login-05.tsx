@@ -7,7 +7,7 @@ import { useForm, type SubmitHandler } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useNavigate } from "react-router-dom";
-import { useLogin } from "../hooks/useLogin.ts";
+import { sendLoginRequest } from "../api.ts";
 
 const schema = z.object({
   email: z.string().email("Invalid email").min(2),
@@ -18,21 +18,19 @@ type FormFields = z.infer<typeof schema>;
 
 export default function LoginPage() {
   const navigate = useNavigate();
-  const login = useLogin();
 
   const {
     register,
     handleSubmit,
-    formState: { errors },
+    formState: { errors, isSubmitting },
   } = useForm({
     resolver: zodResolver(schema),
   });
 
-  const onSubmit: SubmitHandler<FormFields> = (data) => {
+  const onSubmit: SubmitHandler<FormFields> = async (data) => {
     try {
-      login.mutate(data, {
-        onSuccess: () => navigate("/"),
-      });
+      await sendLoginRequest(data);
+      navigate("/");
     } catch (error) {
       errors;
     }
@@ -101,8 +99,9 @@ export default function LoginPage() {
               <Button
                 className="mt-4 w-full py-2 bg-[#D9532C] hover:bg-[#C74B2A] font-medium text-white"
                 type="submit"
+                disabled={isSubmitting}
               >
-                {login.isPending ? "Signing in..." : "Sign in"}
+                {isSubmitting ? "Signing in..." : "Sign in"}
               </Button>
             </form>
           </CardContent>

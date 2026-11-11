@@ -7,7 +7,7 @@ import { useForm, type SubmitHandler } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useNavigate } from "react-router-dom";
-import { useRegister } from "../hooks/useRegister.ts";
+import { sendSignupRequest } from "../api.ts";
 
 const schema = z.object({
   email: z.string().email("Invalid email").min(2),
@@ -18,20 +18,19 @@ type FormFields = z.infer<typeof schema>;
 
 export default function SignUpPage() {
   const navigate = useNavigate();
-  const signUp = useRegister();
 
   const {
     register,
     handleSubmit,
     setError,
-    formState: { errors },
+    formState: { errors, isSubmitting },
   } = useForm({
     resolver: zodResolver(schema),
   });
 
   const onSubmit: SubmitHandler<FormFields> = async (data: FormFields) => {
     try {
-      await signUp.mutateAsync(data);
+      await sendSignupRequest(data);
       navigate("/signin");
     } catch (error) {
       if (error instanceof Error) {
@@ -105,7 +104,7 @@ export default function SignUpPage() {
               )}
 
               <Button className="mt-4 w-full py-2 font-medium" type="submit">
-                {signUp.isPending ? "Signing up..." : "Sign up"}
+                {isSubmitting ? "Signing up..." : "Sign up"}
               </Button>
             </form>
           </CardContent>

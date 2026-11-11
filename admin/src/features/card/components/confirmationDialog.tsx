@@ -10,7 +10,7 @@ import {
   AlertDialogTitle,
   AlertDialogTrigger,
 } from "@/components/ui/alert-dialog";
-import EditPencil from "./editPencil.tsx";
+import RemoveIcon from "./removeIcon.tsx";
 
 type ConfirmationDialogProps = {
   onConfirm: () => void;
@@ -38,7 +38,7 @@ export function ConfirmationDialog({
             aria-label="Delete post"
             className="flex size-9 items-center justify-center rounded-md text-muted-foreground hover:bg-destructive/10 hover:text-destructive focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary disabled:opacity-50"
           >
-            <EditPencil />
+            <RemoveIcon />
           </button>
         }
       />
@@ -52,7 +52,9 @@ export function ConfirmationDialog({
         </AlertDialogHeader>
         <AlertDialogFooter>
           <AlertDialogCancel>Cancel</AlertDialogCancel>
-          <AlertDialogAction onClick={handleContinue}>Continue</AlertDialogAction>
+          <AlertDialogAction onClick={handleContinue}>
+            Continue
+          </AlertDialogAction>
         </AlertDialogFooter>
       </AlertDialogContent>
     </AlertDialog>

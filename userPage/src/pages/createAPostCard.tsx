@@ -7,13 +7,9 @@ import {
   CardTitle,
 } from "@/components/ui/card"
 
-import type { Post } from "../../../admin/types"
+import type { CardProps } from "../lib/utils"
 
-type cardProps = {
-  post: Post
-}
-
-export default function CreatePostCard({ post }: cardProps) {
+export default function CreatePostCard({ post }: CardProps) {
   return (
     <Card>
       <img

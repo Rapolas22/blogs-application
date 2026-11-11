@@ -1,14 +1,6 @@
 "use client"
 
-import LogoIcon from "@/assets/logo-icon"
-import { ArrowRight, ChevronDown } from "lucide-react"
-import {
-  FaGithub as Github,
-  FaFigma as Figma,
-  FaSlack as Slack,
-  FaTwitch as Twitch,
-} from "react-icons/fa6"
-import { SiFramer as Framer } from "react-icons/si"
+import { ArrowRight } from "lucide-react"
 import { motion, type Variants } from "motion/react"
 
 interface NavLink {
@@ -39,22 +31,6 @@ interface Hero14Props {
   onCtaClick?: () => void
 }
 
-const navLinksDefault: NavLink[] = [
-  { label: "Features", href: "#", hasDropdown: true },
-  { label: "Pricing", href: "#", hasDropdown: true },
-  { label: "About", href: "#" },
-  { label: "Resources", href: "#" },
-  { label: "FAQs", href: "#" },
-]
-
-const partnerLogosDefault: PartnerLogo[] = [
-  { name: "GitHub", mark: "github" },
-  { name: "Figma", mark: "figma" },
-  { name: "Framer", mark: "framer" },
-  { name: "Slack", mark: "slack" },
-  { name: "Twitch", mark: "twitch" },
-]
-
 const containerVariants: Variants = {
   hidden: {},
   visible: {
@@ -75,17 +51,6 @@ const riseVariants: Variants = {
   },
 }
 
-const logoVariants: Variants = {
-  hidden: { opacity: 0, y: 14, scale: 0.96, filter: "blur(8px)" },
-  visible: {
-    opacity: 1,
-    y: 0,
-    scale: 1,
-    filter: "blur(0px)",
-    transition: { type: "spring", bounce: 0.25, duration: 1.2 },
-  },
-}
-
 const imageVariants: Variants = {
   hidden: { opacity: 0, scale: 1.1, filter: "blur(10px)" },
   visible: {
@@ -94,16 +59,6 @@ const imageVariants: Variants = {
     filter: "blur(0px)",
     transition: { type: "spring", bounce: 0.1, duration: 1.6 },
   },
-}
-
-function PartnerMark({ mark }: { mark: PartnerLogo["mark"] }) {
-  if (mark === "github") return <Github className="size-5" />
-  if (mark === "figma") return <Figma className="size-5" />
-  if (mark === "framer") return <Framer className="size-5" />
-  if (mark === "slack") return <Slack className="size-5" />
-  if (mark === "twitch") return <Twitch className="size-5" />
-
-  return null
 }
 
 export default function Hero14({

@@ -15,9 +15,6 @@ export const homePagePosts_get = async (req: Request, res: Response) => {
       },
     });
 
-    if (!posts || posts.length === 0)
-      throw new HttpError(404, "No posts found");
-
     res.status(200).json(posts);
   } catch (err) {
     if (err instanceof HttpError) {
@@ -145,9 +142,6 @@ export const userPagePostsFetch_get = async (req: Request, res: Response) => {
       },
     });
 
-    if (!posts || posts.length === 0)
-      throw new HttpError(404, "No posts found");
-
     return res.status(200).json(posts);
   } catch (err) {
     if (err instanceof HttpError) {
@@ -179,5 +173,77 @@ export const userPageGetSinglePost_get = async (
     }
 
     res.status(500).json({ message: "Server error" });
+  }
+};
+
+export const getPostComments_get = async (req: Request, res: Response) => {
+  try {
+    const comments = await prisma.comment.findMany({
+      where: { postId: Number(req.params.id) },
+      include: {
+        user: {
+          select: { name: true },
+        },
+      },
+    });
+
+    return res.status(200).json(comments);
+  } catch (err) {
+    return res.status(500).json({ message: "Server error" });
+  }
+};
+
+export const deletePostCommentById_delete = async (
+  req: Request,
+  res: Response,
+) => {
+  try {
+    const commentId = req.params.commentId;
+    const comment = await prisma.comment.findUnique({
+      where: {
+        id: Number(commentId),
+      },
+    });
+
+    if (!comment) {
+      return res.status(404).json({ message: "Comment not found" });
+    }
+
+    if (comment.userId !== res.locals.userId) {
+      return res.status(403).json({ message: "Forbidden" });
+    }
+
+    await prisma.comment.delete({
+      where: {
+        id: Number(commentId),
+      },
+    });
+
+    return res.status(200).json(comment);
+  } catch (err) {
+    return res.status(500).json({ message: "Server error" });
+  }
+};
+
+export const createAComment_post = async (req: Request, res: Response) => {
+  try {
+    const { content } = req.body;
+    const postId = req.params.id;
+    const userId = res.locals.userId;
+    const comment = await prisma.comment.create({
+      data: {
+        text: content,
+        post: {
+          connect: { id: Number(postId) },
+        },
+        user: {
+          connect: { id: Number(userId) },
+        },
+      },
+    });
+
+    return res.status(201).json(comment);
+  } catch (err) {
+    return res.status(500).json({ message: "Server error" });
   }
 };
