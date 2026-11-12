@@ -1,10 +1,12 @@
+// ROUTE layer: map URL + HTTP method -> controller function (+ requireAuth where needed).
+// No logic here.
 import express, { Router } from "express";
 import {
   login_post,
   signup_post,
   protectRoutesHandler_get,
-} from "../controller/authController";
-import { requireAuth } from "../middleware/authMiddleware";
+} from "./auth.controller";
+import { requireAuth } from "../../middleware/authMiddleware";
 
 const authRouter: Router = express.Router();
 
