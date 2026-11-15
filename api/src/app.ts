@@ -1,6 +1,3 @@
-// Builds the Express app: middleware (json, cors, cookies) -> feature routers -> errorHandler.
-// index.ts will import this and only call app.listen().
-
 import "dotenv/config";
 import express from "express";
 import CookieParser from "cookie-parser";

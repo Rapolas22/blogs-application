@@ -1,5 +1,7 @@
 CLAUDE.md
 .claude
 .vibe-wise/
-postman
-node_modules
+.postman
+node_modules 
+skills-lock.json
+.github

@@ -1,5 +1,3 @@
-// ROUTE layer: map URL + HTTP method -> controller function (+ requireAuth where needed).
-// No logic here.
 import express, { Router } from "express";
 import {
   getPostComments_get,

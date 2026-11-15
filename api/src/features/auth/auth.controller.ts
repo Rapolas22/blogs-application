@@ -1,5 +1,3 @@
-// CONTROLLER layer: read req (params, body, res.locals), call the service, send res.
-// The only layer that knows about req/res. No Prisma here.
 import { Request, Response } from "express";
 import { HttpError } from "../../lib/HttpError";
 import {
@@ -9,9 +7,16 @@ import {
   createUser,
   checkPassword,
 } from "./auth.service";
+import { signupSchema, loginSchema } from "./auth.schema";
 
 export const signup_post = async (req: Request, res: Response) => {
-  const { email, password } = req.body;
+  const result = signupSchema.safeParse(req.body);
+
+  if (!result.success) {
+    throw new HttpError(400, result.error.issues[0].message);
+  }
+
+  const { email, password } = result.data;
 
   const existingUser = await findUserByEmail(email);
 
@@ -25,7 +30,13 @@ export const signup_post = async (req: Request, res: Response) => {
 };
 
 export const login_post = async (req: Request, res: Response) => {
-  const { email, password } = req.body;
+  const result = loginSchema.safeParse(req.body);
+
+  if (!result.success) {
+    throw new HttpError(400, result.error.issues[0].message);
+  }
+
+  const { email, password } = result.data;
 
   const user = await findUserByEmail(email);
 

@@ -1,5 +1,3 @@
-// CONTROLLER layer: read req (params, body, res.locals), call the service, send res.
-// No try/catch: anything thrown here goes to middleware/errorHandler.ts (Express 5 does that for async handlers).
 import { Request, Response } from "express";
 import { HttpError } from "../../lib/HttpError";
 import {

@@ -3,31 +3,35 @@ import {
   AlertDialogAction,
   AlertDialogCancel,
   AlertDialogContent,
-  AlertDialogDescription,
   AlertDialogFooter,
   AlertDialogHeader,
   AlertDialogTitle,
   AlertDialogTrigger,
 } from "@/components/ui/alert-dialog"
 import { Button } from "@/components/ui/button"
+import { CommentForm } from "@/features/comments/components/CommentForm"
+import { useState } from "react"
 
-export function AlertDialogDemo() {
+export function CommentDialog({ postId }: { postId: string }) {
+  const [open, setOpen] = useState(false)
+
   return (
-    <AlertDialog>
+    <AlertDialog open={open} onOpenChange={setOpen}>
       <AlertDialogTrigger
         render={<Button variant="outline">Show Dialog</Button>}
       />
       <AlertDialogContent>
         <AlertDialogHeader>
-          <AlertDialogTitle>Are you absolutely sure?</AlertDialogTitle>
-          <AlertDialogDescription>
-            This action cannot be undone. This will permanently delete your
-            account from our servers.
-          </AlertDialogDescription>
+          <AlertDialogTitle>Add a comment...</AlertDialogTitle>
+          <div className="max-w-full min-w-full">
+            <CommentForm onSuccess={() => setOpen(false)} postId={postId} />
+          </div>
         </AlertDialogHeader>
         <AlertDialogFooter>
           <AlertDialogCancel>Cancel</AlertDialogCancel>
-          <AlertDialogAction>Continue</AlertDialogAction>
+          <AlertDialogAction form="comment-form" type="submit">
+            Continue
+          </AlertDialogAction>
         </AlertDialogFooter>
       </AlertDialogContent>
     </AlertDialog>

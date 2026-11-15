@@ -1,5 +1,3 @@
-// SERVICE layer: business rules + Prisma calls.
-// Takes plain values (e.g. id: number), returns data or throws HttpError. Never touches req/res.
 import prisma from "../../lib/prisma";
 import type { Post } from "../../generated/prisma/client";
 
