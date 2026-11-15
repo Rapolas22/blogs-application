@@ -1,5 +1,5 @@
 import prisma from "../../lib/prisma";
-import type { Post } from "../../generated/prisma/client";
+import type { postSchemaType } from "./posts.schema";
 
 export function getAllPosts() {
   return prisma.post.findMany({
@@ -14,7 +14,7 @@ export function getAllPosts() {
   });
 }
 
-export function createPost(post: Post, userId: number) {
+export function createPost(post: postSchemaType, userId: number) {
   return prisma.post.create({
     data: {
       author: {
@@ -45,7 +45,11 @@ export function getPostById(paramsId: number) {
   });
 }
 
-export function updatePostData(paramsId: number, userId: number, post: Post) {
+export function updatePostData(
+  paramsId: number,
+  userId: number,
+  post: postSchemaType,
+) {
   return prisma.post.update({
     where: {
       id: paramsId,

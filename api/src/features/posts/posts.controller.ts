@@ -9,7 +9,7 @@ import {
   getPublishedPosts,
   getPublishedPostById,
 } from "./posts.service";
-import type { Post } from "../../generated/prisma/client";
+import { postSchema } from "./posts.schema";
 
 export const homePagePosts_get = async (req: Request, res: Response) => {
   const posts = await getAllPosts();
@@ -18,9 +18,12 @@ export const homePagePosts_get = async (req: Request, res: Response) => {
 };
 
 export const postCreation_post = async (req: Request, res: Response) => {
-  const postData: Post = req.body;
+  const result = postSchema.safeParse(req.body);
 
-  const post = await createPost(postData, res.locals.userId);
+  if (result.success === false)
+    throw new HttpError(400, result.error.issues[0].message);
+
+  const post = await createPost(result.data, res.locals.userId);
 
   res.status(201).json(post);
 };
@@ -40,12 +43,15 @@ export const getPostById_get = async (req: Request, res: Response) => {
 };
 
 export const updateProduct_patch = async (req: Request, res: Response) => {
-  const postData: Post = req.body;
+  const result = postSchema.safeParse(req.body);
+
+  if (result.success === false)
+    throw new HttpError(400, result.error.issues[0].message);
 
   const post = await updatePostData(
     Number(req.params.id),
     res.locals.userId,
-    postData,
+    result.data,
   );
 
   res.status(200).json(post);

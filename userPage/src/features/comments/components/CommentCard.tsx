@@ -35,7 +35,11 @@ export default function CommentCard({ comment }: { comment: Comment }) {
         </CardAction>
       </CardHeader>
       <CardContent className="whitespace-pre-wrap">{comment.text}</CardContent>
-      {/* TODO(human): show a short message when mutation.isError (e.g. 403 on someone else's comment). See CommentForm.tsx:29. */}
+      {mutation.isError && (
+        <p role="alert" className="px-4 text-sm text-destructive">
+          Couldn't delete this comment. You can only delete your own.
+        </p>
+      )}
     </Card>
   )
 }
