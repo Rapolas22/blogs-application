@@ -8,14 +8,14 @@ import {
 } from "@/components/ui/card"
 import type { Comment } from "../types"
 import { useDeleteComment } from "../hooks/useDeleteComment"
-import { Trash2 } from "lucide-react"
+import { Trash } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
 export default function CommentCard({ comment }: { comment: Comment }) {
   const mutation = useDeleteComment(String(comment.postId))
 
   return (
-    <Card size="sm">
+    <Card size="default">
       <CardHeader>
         <CardTitle>{comment.user.name ?? "Anonymous"}</CardTitle>
         <CardDescription>
@@ -30,7 +30,7 @@ export default function CommentCard({ comment }: { comment: Comment }) {
             disabled={mutation.isPending}
             onClick={() => mutation.mutate(String(comment.id))}
           >
-            <Trash2 />
+            <Trash />
           </Button>
         </CardAction>
       </CardHeader>

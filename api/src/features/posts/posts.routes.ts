@@ -29,6 +29,10 @@ postsRouter.patch(
 );
 
 postsRouter.get("/user/posts", userPagePostsFetch_get);
-postsRouter.get("/user/posts/:id", userPageGetSinglePost_get);
+postsRouter.get(
+  "/user/posts/:id",
+  requireAuth(["ADMIN", "USER"]),
+  userPageGetSinglePost_get,
+);
 
 export default postsRouter;

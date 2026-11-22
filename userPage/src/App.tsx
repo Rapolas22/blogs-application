@@ -4,6 +4,9 @@ import { useRef } from "react"
 import { BrowserRouter, Route, Routes } from "react-router-dom"
 import ViewBlog from "./features/viewABlog/pages/viewBlog"
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query"
+import SignUp from "./features/auth/components/SignUp"
+import SignIn from "./features/auth/components/SignIn"
+import ProtectedRoutes from "./ProtectedRoute"
 
 const queryClient = new QueryClient()
 
@@ -25,7 +28,12 @@ export function App() {
               </div>
             }
           />
-          <Route path="user/posts/:id" element={<ViewBlog />} />
+          <Route element={<ProtectedRoutes />}>
+            <Route path="user/posts/:id" element={<ViewBlog />} />
+          </Route>
+
+          <Route path="/signup" element={<SignUp />} />
+          <Route path="/signin" element={<SignIn />} />
         </Routes>
       </BrowserRouter>
     </QueryClientProvider>

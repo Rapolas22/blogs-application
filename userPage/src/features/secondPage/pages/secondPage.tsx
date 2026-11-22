@@ -1,4 +1,4 @@
-import CreatePostCard from "../../../pages/createAPostCard"
+import PostCard from "../components/PostCard"
 import { usePosts } from "../hooks/usePosts"
 
 interface appRefs {
@@ -21,7 +21,7 @@ export default function SecondPage({ ref }: appRefs) {
         {data?.length === 0 ? (
           <p>No posts available.</p>
         ) : (
-          data?.map((post) => <CreatePostCard key={post.id} post={post} />)
+          data?.map((post) => <PostCard key={post.id} post={post} />)
         )}
       </div>
     </div>

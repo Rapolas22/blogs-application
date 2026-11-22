@@ -16,7 +16,7 @@ export const signup_post = async (req: Request, res: Response) => {
     throw new HttpError(400, result.error.issues[0].message);
   }
 
-  const { email, password } = result.data;
+  const { email, password, name } = result.data;
 
   const existingUser = await findUserByEmail(email);
 
@@ -24,7 +24,7 @@ export const signup_post = async (req: Request, res: Response) => {
     throw new HttpError(409, "This email has already been used");
   }
 
-  const user = await createUser(email, password);
+  const user = await createUser(email, password, name);
 
   res.status(201).json({ user: user.id });
 };

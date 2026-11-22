@@ -18,7 +18,7 @@ export function CommentDialog({ postId }: { postId: string }) {
   return (
     <AlertDialog open={open} onOpenChange={setOpen}>
       <AlertDialogTrigger
-        render={<Button variant="outline">Show Dialog</Button>}
+        render={<Button variant="outline">Add a Comment</Button>}
       />
       <AlertDialogContent>
         <AlertDialogHeader>
