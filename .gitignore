@@ -5,3 +5,5 @@ CLAUDE.md
 node_modules 
 skills-lock.json
 .github
+graphify-out
+postman

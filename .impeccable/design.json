@@ -1,0 +1,805 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-25T13:33:44.468Z",
+  "title": "Design System: Homerow",
+  "extensions": {
+    "colorMeta": {
+      "paper-ground": {
+        "role": "neutral",
+        "displayName": "Paper Ground",
+        "canonical": "oklch(93.5% 0.018 86.1)",
+        "tonalRamp": [
+          "#0c0b0a",
+          "#272520",
+          "#454239",
+          "#666156",
+          "#878276",
+          "#a9a59b",
+          "#ccc9c3",
+          "#efeeec"
+        ]
+      },
+      "paper-ink": {
+        "role": "neutral",
+        "displayName": "Paper Ink",
+        "canonical": "oklch(28.5% 0.004 84.6)",
+        "tonalRamp": [
+          "#0b0b0b",
+          "#252524",
+          "#434240",
+          "#62615f",
+          "#838280",
+          "#a6a5a3",
+          "#cac9c8",
+          "#eeeeee"
+        ]
+      },
+      "paper-key": {
+        "role": "neutral",
+        "displayName": "Paper Key Top",
+        "canonical": "oklch(96.8% 0.014 88.7)",
+        "tonalRamp": [
+          "#0b0b0a",
+          "#262521",
+          "#44423b",
+          "#646158",
+          "#868279",
+          "#a8a59d",
+          "#cbc9c4",
+          "#efeeed"
+        ]
+      },
+      "paper-key-edge": {
+        "role": "neutral",
+        "displayName": "Paper Key Edge",
+        "canonical": "oklch(84.8% 0.029 84.6)",
+        "tonalRamp": [
+          "#0c0b09",
+          "#28251e",
+          "#484134",
+          "#69604e",
+          "#8b816f",
+          "#aca495",
+          "#cdc9bf",
+          "#f0eeeb"
+        ]
+      },
+      "paper-muted": {
+        "role": "neutral",
+        "displayName": "Paper Muted",
+        "canonical": "oklch(89.6% 0.024 85.8)",
+        "tonalRamp": [
+          "#0c0b09",
+          "#28251f",
+          "#474136",
+          "#676052",
+          "#898272",
+          "#aaa498",
+          "#ccc9c1",
+          "#efeeec"
+        ]
+      },
+      "paper-muted-ink": {
+        "role": "neutral",
+        "displayName": "Paper Muted Ink",
+        "canonical": "oklch(47.7% 0.017 80.6)",
+        "tonalRamp": [
+          "#0c0b0a",
+          "#272521",
+          "#46413a",
+          "#666056",
+          "#888177",
+          "#aaa49c",
+          "#ccc9c3",
+          "#efeeec"
+        ]
+      },
+      "paper-border": {
+        "role": "neutral",
+        "displayName": "Paper Border",
+        "canonical": "oklch(84.8% 0.029 84.6)",
+        "tonalRamp": [
+          "#0c0b09",
+          "#28251e",
+          "#484134",
+          "#69604e",
+          "#8b816f",
+          "#aca495",
+          "#cdc9bf",
+          "#f0eeeb"
+        ]
+      },
+      "paper-input": {
+        "role": "neutral",
+        "displayName": "Paper Input Stroke",
+        "canonical": "oklch(82.3% 0.032 84.6)",
+        "tonalRamp": [
+          "#0c0b09",
+          "#28251d",
+          "#484132",
+          "#6a604c",
+          "#8b816d",
+          "#ada493",
+          "#cec9be",
+          "#f0eeeb"
+        ]
+      },
+      "paper-plate": {
+        "role": "neutral",
+        "displayName": "Paper Plate",
+        "canonical": "oklch(28.5% 0.004 84.6)",
+        "tonalRamp": [
+          "#0b0b0b",
+          "#252524",
+          "#434240",
+          "#62615f",
+          "#838280",
+          "#a6a5a3",
+          "#cac9c8",
+          "#eeeeee"
+        ]
+      },
+      "paper-plate-ink": {
+        "role": "neutral",
+        "displayName": "Paper Plate Ink",
+        "canonical": "oklch(93.5% 0.018 86.1)",
+        "tonalRamp": [
+          "#0c0b0a",
+          "#272520",
+          "#454239",
+          "#666156",
+          "#878276",
+          "#a9a59b",
+          "#ccc9c3",
+          "#efeeec"
+        ]
+      },
+      "paper-accent": {
+        "role": "primary",
+        "displayName": "Brick Red",
+        "canonical": "oklch(56.8% 0.173 32.5)",
+        "tonalRamp": [
+          "#150705",
+          "#441108",
+          "#7b1603",
+          "#ae280f",
+          "#d65038",
+          "#ee826c",
+          "#f9b6a8",
+          "#ffe9e4"
+        ]
+      },
+      "paper-accent-ink": {
+        "role": "primary",
+        "displayName": "Brick Red Ink",
+        "canonical": "oklch(49.7% 0.154 33.3)",
+        "tonalRamp": [
+          "#140805",
+          "#41150b",
+          "#75200e",
+          "#a6341d",
+          "#ce5941",
+          "#e78772",
+          "#f4b9ab",
+          "#fee9e5"
+        ]
+      },
+      "paper-on-accent": {
+        "role": "neutral",
+        "displayName": "On Brick Red",
+        "canonical": "oklch(100.0% 0.000 89.9)",
+        "tonalRamp": [
+          "#0b0b0b",
+          "#252525",
+          "#424242",
+          "#616161",
+          "#828282",
+          "#a5a5a5",
+          "#c9c9c9",
+          "#eeeeee"
+        ]
+      },
+      "matcha-ground": {
+        "role": "neutral",
+        "displayName": "Matcha Ground",
+        "canonical": "oklch(92.7% 0.019 133.1)",
+        "tonalRamp": [
+          "#0b0b0a",
+          "#232622",
+          "#3f443c",
+          "#5d6459",
+          "#7e8579",
+          "#a1a79e",
+          "#c7cac4",
+          "#eeefed"
+        ]
+      },
+      "matcha-ink": {
+        "role": "neutral",
+        "displayName": "Matcha Ink",
+        "canonical": "oklch(27.1% 0.023 152.3)",
+        "tonalRamp": [
+          "#0a0c0a",
+          "#212722",
+          "#3b453d",
+          "#58655b",
+          "#78877c",
+          "#9da99f",
+          "#c4cbc6",
+          "#edefed"
+        ]
+      },
+      "matcha-key": {
+        "role": "neutral",
+        "displayName": "Matcha Key Top",
+        "canonical": "oklch(96.5% 0.010 131.4)",
+        "tonalRamp": [
+          "#0b0b0b",
+          "#242623",
+          "#40433e",
+          "#5f625d",
+          "#80847d",
+          "#a3a6a1",
+          "#c8cac7",
+          "#eeefed"
+        ]
+      },
+      "matcha-key-edge": {
+        "role": "neutral",
+        "displayName": "Matcha Key Edge",
+        "canonical": "oklch(84.1% 0.031 136.2)",
+        "tonalRamp": [
+          "#0a0c0a",
+          "#222720",
+          "#3c4538",
+          "#596654",
+          "#7a8774",
+          "#9ea99a",
+          "#c5cbc2",
+          "#edefec"
+        ]
+      },
+      "matcha-plate": {
+        "role": "neutral",
+        "displayName": "Matcha Plate",
+        "canonical": "oklch(30.4% 0.026 158.1)",
+        "tonalRamp": [
+          "#0a0c0a",
+          "#202723",
+          "#39453e",
+          "#55665c",
+          "#76877d",
+          "#9ba9a0",
+          "#c3ccc6",
+          "#ecefed"
+        ]
+      },
+      "matcha-accent": {
+        "role": "primary",
+        "displayName": "Matcha Green",
+        "canonical": "oklch(49.5% 0.074 152.5)",
+        "tonalRamp": [
+          "#080d09",
+          "#182a1d",
+          "#284b32",
+          "#3e6d4c",
+          "#5f8f6d",
+          "#8ab093",
+          "#b9d0be",
+          "#e9f1eb"
+        ]
+      },
+      "matcha-accent-ink": {
+        "role": "primary",
+        "displayName": "Matcha Green Ink",
+        "canonical": "oklch(46.9% 0.070 152.4)",
+        "tonalRamp": [
+          "#080c09",
+          "#182a1d",
+          "#2a4b33",
+          "#416d4e",
+          "#628f6e",
+          "#8bb094",
+          "#bad0bf",
+          "#e9f1eb"
+        ]
+      },
+      "retro-ground": {
+        "role": "neutral",
+        "displayName": "Retro Ground",
+        "canonical": "oklch(90.4% 0.027 90.1)",
+        "tonalRamp": [
+          "#0c0b09",
+          "#27251e",
+          "#464235",
+          "#676150",
+          "#888271",
+          "#aaa596",
+          "#ccc9c0",
+          "#efeeeb"
+        ]
+      },
+      "retro-ink": {
+        "role": "neutral",
+        "displayName": "Retro Ink",
+        "canonical": "oklch(31.1% 0.012 78.1)",
+        "tonalRamp": [
+          "#0c0b0a",
+          "#272522",
+          "#45413c",
+          "#65615a",
+          "#86827b",
+          "#a8a49f",
+          "#cbc9c5",
+          "#efeeed"
+        ]
+      },
+      "retro-key": {
+        "role": "neutral",
+        "displayName": "Retro Key Top",
+        "canonical": "oklch(95.3% 0.017 88.0)",
+        "tonalRamp": [
+          "#0c0b0a",
+          "#272521",
+          "#45423a",
+          "#656157",
+          "#868277",
+          "#a8a59c",
+          "#cbc9c3",
+          "#efeeec"
+        ]
+      },
+      "retro-key-edge": {
+        "role": "neutral",
+        "displayName": "Retro Key Edge",
+        "canonical": "oklch(81.2% 0.036 88.8)",
+        "tonalRamp": [
+          "#0c0b09",
+          "#28251c",
+          "#484131",
+          "#69604a",
+          "#8b826a",
+          "#aca491",
+          "#cdc9bd",
+          "#f0eeea"
+        ]
+      },
+      "retro-plate": {
+        "role": "neutral",
+        "displayName": "Retro Plate",
+        "canonical": "oklch(34.3% 0.015 79.6)",
+        "tonalRamp": [
+          "#0c0b0a",
+          "#272521",
+          "#45413b",
+          "#666058",
+          "#878178",
+          "#a9a49d",
+          "#ccc9c4",
+          "#efeeed"
+        ]
+      },
+      "retro-accent": {
+        "role": "primary",
+        "displayName": "Workshop Orange",
+        "canonical": "oklch(71.7% 0.152 59.0)",
+        "tonalRamp": [
+          "#120903",
+          "#3d1a00",
+          "#6e2c00",
+          "#9d4400",
+          "#c36700",
+          "#dd9152",
+          "#edbf9b",
+          "#fbebe0"
+        ]
+      },
+      "retro-accent-ink": {
+        "role": "primary",
+        "displayName": "Workshop Orange Ink",
+        "canonical": "oklch(50.5% 0.124 52.3)",
+        "tonalRamp": [
+          "#110905",
+          "#3b1c06",
+          "#692f00",
+          "#964804",
+          "#bb6a33",
+          "#d6936a",
+          "#e9bfa7",
+          "#f9ebe3"
+        ]
+      },
+      "retro-on-accent": {
+        "role": "neutral",
+        "displayName": "On Workshop Orange",
+        "canonical": "oklch(22.0% 0.009 75.1)",
+        "tonalRamp": [
+          "#0b0b0a",
+          "#262523",
+          "#44413e",
+          "#64615c",
+          "#85827d",
+          "#a8a4a0",
+          "#cbc9c6",
+          "#efeeed"
+        ]
+      },
+      "midnight-ground": {
+        "role": "neutral",
+        "displayName": "Midnight Ground",
+        "canonical": "oklch(26.8% 0.054 270.4)",
+        "tonalRamp": [
+          "#0a0b0f",
+          "#202532",
+          "#394159",
+          "#556080",
+          "#7681a3",
+          "#9ba4c1",
+          "#c3c9da",
+          "#eceef4"
+        ]
+      },
+      "midnight-ink": {
+        "role": "neutral",
+        "displayName": "Midnight Ink",
+        "canonical": "oklch(93.4% 0.013 271.3)",
+        "tonalRamp": [
+          "#0b0b0c",
+          "#242528",
+          "#404247",
+          "#5e6169",
+          "#7f828a",
+          "#a3a5ab",
+          "#c8c9cd",
+          "#eeeef0"
+        ]
+      },
+      "midnight-key": {
+        "role": "neutral",
+        "displayName": "Midnight Key Top",
+        "canonical": "oklch(34.2% 0.077 271.1)",
+        "tonalRamp": [
+          "#090b10",
+          "#1e2437",
+          "#364063",
+          "#515f8d",
+          "#7180b1",
+          "#97a4cc",
+          "#c0c8e1",
+          "#ebeef6"
+        ]
+      },
+      "midnight-key-edge": {
+        "role": "neutral",
+        "displayName": "Midnight Key Edge",
+        "canonical": "oklch(23.0% 0.047 271.6)",
+        "tonalRamp": [
+          "#0a0b0e",
+          "#212530",
+          "#3b4156",
+          "#57607d",
+          "#78819f",
+          "#9ca4bd",
+          "#c4c9d8",
+          "#edeef3"
+        ]
+      },
+      "midnight-plate": {
+        "role": "neutral",
+        "displayName": "Midnight Plate",
+        "canonical": "oklch(15.3% 0.024 271.2)",
+        "tonalRamp": [
+          "#0b0b0d",
+          "#23252b",
+          "#3e424d",
+          "#5c616f",
+          "#7d8291",
+          "#a0a5b2",
+          "#c6c9d1",
+          "#edeef1"
+        ]
+      },
+      "midnight-accent": {
+        "role": "primary",
+        "displayName": "Sky Legend Blue",
+        "canonical": "oklch(80.2% 0.109 242.2)",
+        "tonalRamp": [
+          "#060c12",
+          "#0a283c",
+          "#05466c",
+          "#14679a",
+          "#3e89be",
+          "#73acd7",
+          "#adcee8",
+          "#e5f0f9"
+        ]
+      },
+      "midnight-accent-ink": {
+        "role": "primary",
+        "displayName": "Sky Legend Blue Ink",
+        "canonical": "oklch(80.2% 0.109 242.2)",
+        "tonalRamp": [
+          "#060c12",
+          "#0a283c",
+          "#05466c",
+          "#14679a",
+          "#3e89be",
+          "#73acd7",
+          "#adcee8",
+          "#e5f0f9"
+        ]
+      },
+      "midnight-on-accent": {
+        "role": "neutral",
+        "displayName": "On Sky Legend Blue",
+        "canonical": "oklch(17.7% 0.034 269.6)",
+        "tonalRamp": [
+          "#0a0b0d",
+          "#22252d",
+          "#3c4251",
+          "#596175",
+          "#7a8297",
+          "#9ea5b7",
+          "#c5c9d4",
+          "#edeef2"
+        ]
+      },
+      "error": {
+        "role": "error",
+        "displayName": "Error Red",
+        "canonical": "oklch(50.1% 0.178 28.7)",
+        "tonalRamp": [
+          "#150705",
+          "#450f0b",
+          "#7c110c",
+          "#b0221b",
+          "#d84c3f",
+          "#f17f71",
+          "#fbb5aa",
+          "#ffe8e4"
+        ]
+      },
+      "error-midnight": {
+        "role": "error",
+        "displayName": "Midnight Error Coral",
+        "canonical": "oklch(75.9% 0.144 26.1)",
+        "tonalRamp": [
+          "#130807",
+          "#401513",
+          "#73221f",
+          "#a33733",
+          "#ca5b53",
+          "#e4887f",
+          "#f2b9b2",
+          "#fde9e7"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "The home page headline only. Left-aligned and balanced."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "A post's title (2.25rem on mobile to 3.75rem). Sign-in and sign-up headings use the same face at 3rem with display tracking."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Section headings like \"Latest posts\" and \"Comments\" (1.875rem to 2.25rem)."
+      },
+      "key-title": {
+        "displayName": "Key Title",
+        "purpose": "The title on a post key."
+      },
+      "accent-italic": {
+        "displayName": "Accent Italic",
+        "purpose": "One italic word or short phrase in a big heading, in --primary-ink."
+      },
+      "reading": {
+        "displayName": "Reading",
+        "purpose": "Post bodies, max 68ch. Headings inside a post switch back to the display face at 700."
+      },
+      "lede": {
+        "displayName": "Lede",
+        "purpose": "The short paragraph under the home headline."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Comments and general UI text."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Buttons, form labels, dates, \"Read post\"."
+      },
+      "code": {
+        "displayName": "Code",
+        "purpose": "Inline code and code blocks in posts."
+      }
+    },
+    "shadows": [
+      {
+        "name": "button-edge-accent",
+        "value": "inset 0 -3px 0 rgb(0 0 0 / 0.22)",
+        "purpose": "Resting bottom edge of accent keycap buttons. Pressed: inset 0 -1px 0 and a 1px move down."
+      },
+      {
+        "name": "button-edge-key",
+        "value": "inset 0 -3px 0 var(--key-edge)",
+        "purpose": "Resting bottom edge of light (outline) keycap buttons. Pressed: -1px."
+      },
+      {
+        "name": "post-key-edge",
+        "value": "inset 0 -6px 0 var(--key-edge)",
+        "purpose": "Post keys and the sign-in form key. Pressed: -2px and a 4px move down."
+      },
+      {
+        "name": "post-key-edge-accent",
+        "value": "inset 0 -6px 0 rgb(0 0 0 / 0.2)",
+        "purpose": "The featured (accent) post key."
+      },
+      {
+        "name": "comment-key-edge",
+        "value": "inset 0 -5px 0 var(--key-edge)",
+        "purpose": "Comment cards on the plate."
+      },
+      {
+        "name": "colourway-key",
+        "value": "inset 0 -3px 0 rgb(0 0 0 / 0.25), 0 1px 2px rgb(0 0 0 / 0.2)",
+        "purpose": "The small theme keys; the only place with a tiny outer shadow."
+      }
+    ],
+    "motion": [
+      {
+        "name": "theme-reveal",
+        "value": "650ms cubic-bezier(0.22, 1, 0.36, 1)",
+        "purpose": "View Transition circle reveal of a new colourway from the pressed key. No animation under prefers-reduced-motion."
+      },
+      {
+        "name": "key-press",
+        "value": "150ms ease-out (translate, box-shadow)",
+        "purpose": "Keys lift on hover and travel down with a thinner edge on press."
+      },
+      {
+        "name": "arrow-nudge",
+        "value": "200ms ease-out",
+        "purpose": "The \"Read post\" arrow slides 4px right on post key hover."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "sm",
+        "value": "640px"
+      },
+      {
+        "name": "md",
+        "value": "768px"
+      },
+      {
+        "name": "lg",
+        "value": "1024px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Accent keycap for the main action in a group (Sign up, the form submit, Read the latest posts).",
+      "html": "<button class=\"ds-btn-primary\">Sign up</button>",
+      "css": ".ds-btn-primary{display:inline-flex;align-items:center;gap:6px;height:36px;padding:0 10px;border:1px solid transparent;border-radius:.75rem;background:var(--primary);color:var(--primary-foreground);font-family:'Geist Variable',sans-serif;font-size:.875rem;font-weight:500;box-shadow:inset 0 -3px 0 rgb(0 0 0/.22);transition:all .15s;cursor:pointer;outline:none}.ds-btn-primary:hover{filter:brightness(1.05)}.ds-btn-primary:active{transform:translateY(1px);box-shadow:inset 0 -1px 0 rgb(0 0 0/.22)}.ds-btn-primary:focus-visible{border-color:var(--ring);box-shadow:inset 0 -3px 0 rgb(0 0 0/.22),0 0 0 3px color-mix(in oklab,var(--ring) 50%,transparent)}"
+    },
+    {
+      "name": "Key Button",
+      "kind": "button",
+      "refersTo": "button-key",
+      "description": "Light keycap for secondary actions (All posts, Add a comment, the mobile menu).",
+      "html": "<button class=\"ds-btn-key\">All posts</button>",
+      "css": ".ds-btn-key{display:inline-flex;align-items:center;gap:6px;height:32px;padding:0 10px;border:1px solid var(--border);border-radius:.75rem;background:var(--card);color:var(--foreground);font-family:'Geist Variable',sans-serif;font-size:.875rem;font-weight:500;box-shadow:inset 0 -3px 0 var(--key-edge);transition:all .15s;cursor:pointer;outline:none}.ds-btn-key:hover{background:var(--muted)}.ds-btn-key:active{transform:translateY(1px);box-shadow:inset 0 -1px 0 var(--key-edge)}.ds-btn-key:focus-visible{border-color:var(--ring);box-shadow:inset 0 -3px 0 var(--key-edge),0 0 0 3px color-mix(in oklab,var(--ring) 50%,transparent)}"
+    },
+    {
+      "name": "Colourway Switcher",
+      "kind": "custom",
+      "refersTo": "colourway-key",
+      "description": "Four small keycaps that switch the colourway, each with a homing bar; the active one stays pressed.",
+      "html": "<div class=\"ds-switch\" role=\"group\" aria-label=\"Colour theme\"><button class=\"ds-ckey ds-ckey-on\" aria-label=\"Paper theme\" aria-pressed=\"true\" style=\"background:#f8f4ea\"><span style=\"background:#c8432b\"></span></button><button class=\"ds-ckey\" aria-label=\"Matcha theme\" style=\"background:#9fbf98\"><span style=\"background:#24332a\"></span></button><button class=\"ds-ckey\" aria-label=\"Retro theme\" style=\"background:#e8892f\"><span style=\"background:#34302a\"></span></button><button class=\"ds-ckey\" aria-label=\"Midnight theme\" style=\"background:#2a3560\"><span style=\"background:#7cc7ff\"></span></button></div>",
+      "css": ".ds-switch{display:flex;gap:6px}.ds-ckey{position:relative;width:32px;height:32px;border:0;border-radius:9px;box-shadow:inset 0 -3px 0 rgb(0 0 0/.25),0 1px 2px rgb(0 0 0/.2);transition:translate .15s ease-out,box-shadow .15s ease-out;cursor:pointer;outline:none}.ds-ckey span{position:absolute;left:10px;right:10px;bottom:8px;height:3px;border-radius:9999px}.ds-ckey:hover{translate:0 -1px}.ds-ckey:active{translate:0 2px;box-shadow:inset 0 -1px 0 rgb(0 0 0/.25)}.ds-ckey:focus-visible{box-shadow:0 0 0 3px color-mix(in oklab,var(--ring) 60%,transparent)}.ds-ckey-on{translate:0 2px;box-shadow:inset 0 -1px 0 rgb(0 0 0/.25),0 0 0 2px var(--background),0 0 0 4px color-mix(in oklab,var(--foreground) 70%,transparent)}"
+    },
+    {
+      "name": "Post Keys on the Plate",
+      "kind": "card",
+      "refersTo": "post-key",
+      "description": "Post keys on the dark plate; the newest post is the wide accent key with a homing bar.",
+      "html": "<div class=\"ds-plate\"><article class=\"ds-key ds-key-accent\"><time>25 November 2026</time><h3>Post title</h3><p>Short description of the post.</p><span class=\"ds-read\">Read post</span><i class=\"ds-bar\"></i></article><article class=\"ds-key\"><time>20 November 2026</time><h3>Post title</h3><p>Short description of the post.</p><span class=\"ds-read\">Read post</span></article></div>",
+      "css": ".ds-plate{display:grid;grid-template-columns:2fr 1fr;gap:16px;padding:16px;border-radius:1.65rem;background:var(--plate);color:var(--plate-foreground)}.ds-key{position:relative;display:flex;flex-direction:column;min-height:240px;padding:24px 24px 28px;border-radius:1.35rem;background:var(--card);color:var(--card-foreground);box-shadow:inset 0 -6px 0 var(--key-edge);font-family:'Geist Variable',sans-serif;transition:translate .15s ease-out,box-shadow .15s ease-out;cursor:pointer}.ds-key:hover{translate:0 -2px}.ds-key:active{translate:0 4px;box-shadow:inset 0 -2px 0 var(--key-edge)}.ds-key time{font-size:.875rem;color:var(--muted-foreground)}.ds-key p{margin:8px 0 0;color:var(--muted-foreground)}.ds-key h3{margin:12px 0 0;font-family:'Bricolage Grotesque Variable',sans-serif;font-size:1.5rem;font-weight:700;line-height:1.25;letter-spacing:-.025em}.ds-read{margin-top:auto;padding-top:24px;font-size:.875rem;font-weight:500}.ds-key-accent{background:var(--primary);color:var(--primary-foreground);box-shadow:inset 0 -6px 0 rgb(0 0 0/.2)}.ds-key-accent time,.ds-key-accent p{color:var(--primary-foreground)}.ds-key-accent:active{box-shadow:inset 0 -2px 0 rgb(0 0 0/.2)}.ds-bar{position:absolute;bottom:20px;left:50%;width:48px;height:4px;transform:translateX(-50%);border-radius:9999px;background:color-mix(in oklab,var(--primary-foreground) 70%,transparent)}"
+    },
+    {
+      "name": "Text Input",
+      "kind": "input",
+      "refersTo": "input",
+      "description": "Form field inside the sign-in and sign-up key.",
+      "html": "<label class=\"ds-label\">Email<input class=\"ds-input\" type=\"email\" placeholder=\"you@example.com\"></label>",
+      "css": ".ds-label{display:block;font-family:'Geist Variable',sans-serif;font-size:.875rem;font-weight:500;color:var(--foreground)}.ds-input{display:block;width:100%;margin-top:8px;height:40px;padding:4px 10px;border:1px solid var(--input);border-radius:.75rem;background:transparent;color:var(--foreground);font-size:.875rem;outline:none;transition:border-color .15s,box-shadow .15s}.ds-input::placeholder{color:var(--muted-foreground)}.ds-input:focus-visible{border-color:var(--ring);box-shadow:0 0 0 3px color-mix(in oklab,var(--ring) 50%,transparent)}"
+    },
+    {
+      "name": "Navigation",
+      "kind": "nav",
+      "refersTo": "",
+      "description": "80px header: keycap logo and name on the left; divider, ghost Log in and primary Sign up on the right.",
+      "html": "<nav class=\"ds-nav\"><a class=\"ds-logo\" href=\"#\"><svg viewBox=\"0 0 32 32\" width=\"32\" height=\"32\" aria-hidden=\"true\"><rect x=\"2\" y=\"2\" width=\"28\" height=\"28\" rx=\"8\" fill=\"var(--primary)\"/><rect x=\"6\" y=\"4\" width=\"20\" height=\"21\" rx=\"6\" fill=\"white\" opacity=\"0.14\"/><rect x=\"11\" y=\"19\" width=\"10\" height=\"3\" rx=\"1.5\" fill=\"var(--primary-foreground)\"/></svg>Homerow</a><span class=\"ds-sep\"></span><a class=\"ds-ghost\" href=\"#\">Log in</a><a class=\"ds-cta\" href=\"#\">Sign up</a></nav>",
+      "css": ".ds-nav{display:flex;align-items:center;gap:8px;height:80px;padding:0 20px;background:var(--background);color:var(--foreground);font-family:'Geist Variable',sans-serif}.ds-logo{display:inline-flex;align-items:center;gap:8px;margin-right:auto;color:inherit;text-decoration:none;font-family:'Bricolage Grotesque Variable',sans-serif;font-size:1.5rem;font-weight:700;letter-spacing:-.025em}.ds-sep{width:1px;height:24px;background:var(--border);margin:0 12px}.ds-ghost,.ds-cta{display:inline-flex;align-items:center;height:36px;padding:0 10px;border-radius:.75rem;font-size:.875rem;font-weight:500;text-decoration:none;color:var(--foreground);transition:all .15s}.ds-ghost:hover{background:var(--muted)}.ds-cta{background:var(--primary);color:var(--primary-foreground);box-shadow:inset 0 -3px 0 rgb(0 0 0/.22)}.ds-cta:hover{filter:brightness(1.05)}.ds-logo:focus-visible,.ds-ghost:focus-visible,.ds-cta:focus-visible{outline:none;box-shadow:0 0 0 3px color-mix(in oklab,var(--ring) 50%,transparent)}"
+    },
+    {
+      "name": "Display Headline",
+      "kind": "custom",
+      "refersTo": "",
+      "description": "Display headline with one Literata italic accent phrase in --primary-ink.",
+      "html": "<h1 class=\"ds-display\">Notes from the <em>home row</em> of a developer.</h1>",
+      "css": ".ds-display{margin:0;font-family:'Bricolage Grotesque Variable',sans-serif;font-size:clamp(3rem,8.5vw,6.75rem);font-weight:800;line-height:.92;letter-spacing:-.04em;color:var(--foreground);text-wrap:balance}.ds-display em{font-family:'Literata Variable',Georgia,serif;font-weight:500;letter-spacing:-.02em;color:var(--primary-ink)}"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Home Row",
+    "overview": "Homerow is a dev blog drawn as a keyboard the reader already knows by touch. Buttons, posts, comments and the sign-in form are all keycaps: flat, slightly rounded tops with a darker bottom edge that gets thinner when you press them. Groups of keys sit on a dark \"plate\", the base of a keyboard. The homing bar (the small bump on the F and J keys) is the one ornament, and it marks the most important key in a group.\n\nThe look comes in four colourways, named like keycap sets: Paper (the default), Matcha, Retro and Midnight. Every colourway fills the same roles: a ground, an ink, light keys with a darker edge, a dark plate, and one accent. Readers switch colourways with four small keycaps in the header, and the new colours spread out in a circle from the key they pressed.\n\nPages are calm and spacious. The home page has a huge left-aligned headline, then the plate of post keys. A post is one reading column in a serif face. There is no photo hero and no generic card grid with drop shadows.",
+    "keyCharacteristics": [
+      "Everything you can press is a keycap with an inset bottom edge, not a floating shadow.",
+      "Dark plates group keys; light keys sit on them.",
+      "One accent per colourway, spent on the primary button, the featured post and accent text.",
+      "A heavy grotesque display face with one Literata italic word in headings.",
+      "Colourways are swapped live, with a circle reveal from the pressed key."
+    ],
+    "rules": [
+      {
+        "name": "The Two Accents Rule",
+        "body": "`--primary` is for fills (buttons, the featured key, the logo). `--primary-ink` is for text and thin marks (links, the italic heading word, list markers, caret). Accent-coloured text always uses `--primary-ink`, because Retro's orange fill is not readable as text on its ground.",
+        "section": "colors"
+      },
+      {
+        "name": "The Same Roles Rule",
+        "body": "A new colourway must define every role variable (ground, ink, key, key-edge, muted, border, input, plate, plate-foreground, primary, primary-foreground, primary-ink, ring). A component that needs a colour none of the roles cover is a sign the design is drifting.",
+        "section": "colors"
+      },
+      {
+        "name": "The One Accent Rule",
+        "body": "Each group of keys has at most one accent key. On the post plate it is the newest post; in a form it is the submit button.",
+        "section": "colors"
+      },
+      {
+        "name": "The One Italic Word Rule",
+        "body": "A big heading may set one word or short phrase in Literata italic (500, tracking -0.02em) in `--primary-ink`, like \"home row\" or \"back\". One per heading, never a whole sentence.",
+        "section": "typography"
+      },
+      {
+        "name": "The Serif Means Reading Rule",
+        "body": "Literata upright is only for post content. UI text, cards and forms use Geist.",
+        "section": "typography"
+      },
+      {
+        "name": "The Inset Edge Rule",
+        "body": "Height is drawn inside the key as a bottom band, never as a blurred outer shadow. A pressed state always makes the band thinner and moves the key down.",
+        "section": "elevation"
+      },
+      {
+        "name": "The Plate Rule",
+        "body": "A group of related keys (the post list, the comment list, a form) sits on a plate. A single key never floats on the ground by itself, except buttons.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "Do draw height as an inset bottom edge (`inset 0 -3px` for buttons, `-5px` to `-6px` for larger keys) and make it thinner on press.",
+      "Do put groups of keys on a plate whose inset equals the gap between keys.",
+      "Do use `--primary-ink` for any accent-coloured text and `--primary` only for fills.",
+      "Do keep one accent key per group: the primary action or the newest post.",
+      "Do check new work in all four colourways, including Midnight.",
+      "Do keep the colourway switch instant under `prefers-reduced-motion: reduce`."
+    ],
+    "donts": [
+      "Don't use a dark photo hero or a stock image behind the headline.",
+      "Don't lay posts out as a generic grid of floating cards with soft drop shadows; they are keys on a plate.",
+      "Don't hard-code hex values in components; use the role variables so every colourway works.",
+      "Don't set more than one Literata italic word or phrase in a heading.",
+      "Don't add a second accent colour to a colourway."
+    ]
+  }
+}

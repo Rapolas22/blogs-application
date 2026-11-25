@@ -64,3 +64,12 @@ export const login_post = async (req: Request, res: Response) => {
 export const protectRoutesHandler_get = (req: Request, res: Response) => {
   return res.status(200).json(res.locals.userId);
 };
+
+export const logout_get = async (req: Request, res: Response) => {
+  try {
+    res.cookie("jwt", "", { maxAge: 1 });
+    res.status(200).json({ message: "Logged out successfully" });
+  } catch (err) {
+    res.status(500).json({ message: "Error logging out" });
+  }
+};

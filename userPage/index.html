@@ -2,9 +2,21 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>vite-app</title>
+    <title>Homerow</title>
+    <script>
+      // Put the saved theme on <html> before React loads, so the page
+      // doesn't flash the default colours first. First visit: follow
+      // the system setting (dark system -> Midnight, otherwise Paper).
+      {
+        const saved = localStorage.getItem("homerow-theme")
+        const prefersDark = matchMedia("(prefers-color-scheme: dark)").matches
+        const theme = saved || (prefersDark ? "midnight" : "paper")
+        document.documentElement.dataset.theme = theme
+        if (theme === "midnight") document.documentElement.classList.add("dark")
+      }
+    </script>
   </head>
   <body>
     <div id="root"></div>

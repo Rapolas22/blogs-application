@@ -24,7 +24,7 @@ This is also a learning project. The owner is a CS student learning full-stack d
 - The admin panel (`admin/`) is a React SPA behind a login. It talks to an Express API (`api/`) through `/api/*`.
 - Posts are written in a TinyMCE rich-text editor. Code samples (`codesample`) are a core part of the content.
 - A post has a title, a short description, a thumbnail image URL, an SEO name, rich-text content, an author, a created date, and a draft/published state.
-- A **public reader-facing blog site is planned**. The owner will design and build it personally, so it is out of scope for assisted design work unless the owner asks. It will read posts from this API.
+- The **public reader site** (`userPage/`) reads posts from this API. Readers sign up (role `USER`) to read posts and comment. The owner writes its code; assisted design work happens there when the owner asks for it.
 
 ## Capabilities and Constraints
 
@@ -38,7 +38,9 @@ This is also a learning project. The owner is a CS student learning full-stack d
 
 ## Brand Commitments
 
-None yet. There is no product name: "Blog Page" in the admin header is a placeholder.
+- **Name: Homerow.** Chosen by the owner on 2026-11-25 to replace the boilerplate name "Blookie". The admin header still shows the placeholder "Blog Page".
+- **Mark:** a single keycap with a homing bar (`userPage/src/components/logo.tsx`).
+- **Readers can switch colour themes.** The owner asked for this as part of the identity.
 
 ## Evidence on Hand
 

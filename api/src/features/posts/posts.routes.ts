@@ -10,7 +10,7 @@ import {
   userPageGetSinglePost_get,
 } from "./posts.controller";
 
-import { requireAuth } from "../../middleware/authMiddleware";
+import { checkUser, requireAuth } from "../../middleware/authMiddleware";
 
 const postsRouter: Router = express.Router();
 
@@ -21,7 +21,12 @@ postsRouter.delete(
   requireAuth(["ADMIN"]),
   postRemove_delete,
 );
-postsRouter.get("/getPosts/:id", requireAuth(["ADMIN"]), getPostById_get);
+postsRouter.get(
+  "/getPosts/:id",
+  checkUser,
+  requireAuth(["ADMIN"]),
+  getPostById_get,
+);
 postsRouter.patch(
   "/patchPosts/:id",
   requireAuth(["ADMIN"]),

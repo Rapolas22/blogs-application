@@ -15,11 +15,18 @@ export default function CommentCard({ comment }: { comment: Comment }) {
   const mutation = useDeleteComment(String(comment.postId))
 
   return (
-    <Card size="default">
+    <Card
+      size="default"
+      className="rounded-2xl pb-5 shadow-[inset_0_-5px_0_var(--key-edge)] ring-0"
+    >
       <CardHeader>
         <CardTitle>{comment.user.name ?? "Anonymous"}</CardTitle>
         <CardDescription>
-          {new Date(comment.createdAt).toLocaleDateString("lt-LT")}
+          {new Date(comment.createdAt).toLocaleDateString("en-GB", {
+            day: "numeric",
+            month: "long",
+            year: "numeric",
+          })}
         </CardDescription>
         <CardAction>
           <Button
@@ -34,7 +41,9 @@ export default function CommentCard({ comment }: { comment: Comment }) {
           </Button>
         </CardAction>
       </CardHeader>
-      <CardContent className="whitespace-pre-wrap">{comment.text}</CardContent>
+      <CardContent className="leading-relaxed whitespace-pre-wrap">
+        {comment.text}
+      </CardContent>
       {mutation.isError && (
         <p role="alert" className="px-4 text-sm text-destructive">
           Couldn't delete this comment. You can only delete your own.

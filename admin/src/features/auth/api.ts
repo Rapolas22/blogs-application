@@ -32,7 +32,7 @@ export async function sendSignupRequest(data: Data): Promise<User> {
 
   if (!res.ok) {
     const body = await res.json().catch(() => null);
-    throw new Error(body?.message ?? "Serverio klaida, bandykite vėliau");
+    throw new Error(body?.message ?? "Server error");
   }
 
   return (await res.json()) as User;
